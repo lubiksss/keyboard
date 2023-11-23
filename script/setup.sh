@@ -18,9 +18,6 @@ if ! grep -sq "require('keyboard')" ~/.hammerspoon/init.lua; then
 fi
 ln -sfn $PWD/hammerspoon ~/.hammerspoon/keyboard
 
-# Disable Dock icon for Hammerspoon
-defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE
-
 # If Hammerspoon is already running, kill it so we can pick up the new config
 # when opening Hammerspoon below
 killall Hammerspoon || true
