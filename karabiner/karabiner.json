@@ -18,7 +18,7 @@
                 },
                 "rules": [
                     {
-                        "description": "S+D -> (S)uper(D)uper Mode",
+                        "description": "S+D -> SD Mode",
                         "manipulators": [
                             {
                                 "from": {
@@ -58,7 +58,7 @@
                         ]
                     },
                     {
-                        "description": "(S)uper(D)uper + H -> Left",
+                        "description": "SD + H -> Left",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -86,7 +86,7 @@
                         ]
                     },
                     {
-                        "description": "(S)uper(D)uper + J -> Down",
+                        "description": "SD + J -> Down",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -114,7 +114,7 @@
                         ]
                     },
                     {
-                        "description": "(S)uper(D)uper + K -> Up",
+                        "description": "SD + K -> Up",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -142,7 +142,7 @@
                         ]
                     },
                     {
-                        "description": "(S)uper(D)uper + L -> Right",
+                        "description": "SD + L -> Right",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -170,7 +170,7 @@
                         ]
                     },
                     {
-                        "description": "(S)uper(D)uper + A -> Option",
+                        "description": "SD + A -> Option",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -198,7 +198,7 @@
                         ]
                     },
                     {
-                        "description": "(S)uper(D)uper + F -> Command",
+                        "description": "SD + F -> Command",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -226,7 +226,7 @@
                         ]
                     },
                     {
-                        "description": "(S)uper(D)uper + Space -> Shift",
+                        "description": "SD + Space -> Shift",
                         "manipulators": [
                             {
                                 "conditions": [
