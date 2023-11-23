@@ -1,3 +1,27 @@
+## Installation
+
+1. Grab the bits
+
+    ```sh
+    git clone https://github.com/lubiksss/keyboard.git ~/.keyboard
+
+    cd ~/.keyboard
+
+    script/setup.sh
+    ```
+
+2. Enable accessibility to allow Hammerspoon to do its thing [[screenshot]](screenshots/accessibility-permissions-for-hammerspoon.png)
+
+3. You'll be [prompted to allow Karabiner-Elements to load its kernel extension](https://karabiner-elements.pqrs.org/docs/getting-started/installation/#open-karabiner-elements-preferences), followed by a [flurry of prompts related to input monitoring](https://karabiner-elements.pqrs.org/docs/getting-started/installation/#grant-input-monitoring-to-karabiner-elements-processes). Follow the prompts to upgrade your life.
+
+[customize]: http://dictionary.reference.com/browse/customize
+[don't-make-me-think]: http://en.wikipedia.org/wiki/Don't_Make_Me_Think
+[karabiner]: https://github.com/tekezo/Karabiner-Elements
+[hammerspoon]: http://www.hammerspoon.org
+[hammerspoon-releases]: https://github.com/Hammerspoon/hammerspoon/releases
+[modern-space-cadet]: http://stevelosh.com/blog/2012/10/a-modern-space-cadet
+[modern-space-cadet-key-repeat]: http://stevelosh.com/blog/2012/10/a-modern-space-cadet/#controlescape
+
 ## Toward a more useful keyboard
 
 Steve Losh's [Modern Space Cadet][modern-space-cadet] is an inspiration.
@@ -167,26 +191,3 @@ This setup is honed and tested with the following dependencies.
 - [Karabiner-Elements 13.7.0][karabiner]
 - [Hammerspoon 0.9.90][hammerspoon]
 
-## Installation
-
-1. Grab the bits
-
-    ```sh
-    git clone https://github.com/jasonrudolph/keyboard.git ~/.keyboard
-
-    cd ~/.keyboard
-
-    script/setup
-    ```
-
-2. Enable accessibility to allow Hammerspoon to do its thing [[screenshot]](screenshots/accessibility-permissions-for-hammerspoon.png)
-
-3. You'll be [prompted to allow Karabiner-Elements to load its kernel extension](https://karabiner-elements.pqrs.org/docs/getting-started/installation/#open-karabiner-elements-preferences), followed by a [flurry of prompts related to input monitoring](https://karabiner-elements.pqrs.org/docs/getting-started/installation/#grant-input-monitoring-to-karabiner-elements-processes). Follow the prompts to upgrade your life.
-
-[customize]: http://dictionary.reference.com/browse/customize
-[don't-make-me-think]: http://en.wikipedia.org/wiki/Don't_Make_Me_Think
-[karabiner]: https://github.com/tekezo/Karabiner-Elements
-[hammerspoon]: http://www.hammerspoon.org
-[hammerspoon-releases]: https://github.com/Hammerspoon/hammerspoon/releases
-[modern-space-cadet]: http://stevelosh.com/blog/2012/10/a-modern-space-cadet
-[modern-space-cadet-key-repeat]: http://stevelosh.com/blog/2012/10/a-modern-space-cadet/#controlescape
