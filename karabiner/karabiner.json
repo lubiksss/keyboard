@@ -18,7 +18,7 @@
                 },
                 "rules": [
                     {
-                        "description": "S+D -> SD Mode",
+                        "description": "S+D -> Vim Mode",
                         "manipulators": [
                             {
                                 "from": {
@@ -38,7 +38,7 @@
                                         "to_after_key_up": [
                                             {
                                                 "set_variable": {
-                                                    "name": "sd-mode",
+                                                    "name": "vim-mode",
                                                     "value": 0
                                                 }
                                             }
@@ -48,7 +48,7 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "sd-mode",
+                                            "name": "vim-mode",
                                             "value": 1
                                         }
                                     }
@@ -58,7 +58,7 @@
                         ]
                     },
                     {
-                        "description": "JK -> SD Mode",
+                        "description": "JK -> Vim Mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -90,7 +90,7 @@
                                     },
                                     {
                                         "set_variable": {
-                                            "name": "sd-mode",
+                                            "name": "vim-mode",
                                             "value": 1
                                         }
                                     }
@@ -100,7 +100,7 @@
                         ]
                     },
                     {
-                        "description": "ESC -> Quit SD Mode",
+                        "description": "ESC -> Quit Vim Mode",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -133,7 +133,7 @@
                                     },
                                     {
                                         "set_variable": {
-                                            "name": "sd-mode",
+                                            "name": "vim-mode",
                                             "value": 0
                                         }
                                     }
@@ -143,12 +143,12 @@
                         ]
                     },
                     {
-                        "description": "SD Mode + H -> Left",
+                        "description": "Vim Mode + H -> Left",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "sd-mode",
+                                        "name": "vim-mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -171,12 +171,12 @@
                         ]
                     },
                     {
-                        "description": "SD Mode + J -> Down",
+                        "description": "Vim Mode + J -> Down",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "sd-mode",
+                                        "name": "vim-mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -199,12 +199,12 @@
                         ]
                     },
                     {
-                        "description": "SD Mode + K -> Up",
+                        "description": "Vim Mode + K -> Up",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "sd-mode",
+                                        "name": "vim-mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -227,12 +227,12 @@
                         ]
                     },
                     {
-                        "description": "SD Mode + L -> Right",
+                        "description": "Vim Mode + L -> Right",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "sd-mode",
+                                        "name": "vim-mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -255,12 +255,12 @@
                         ]
                     },
                     {
-                        "description": "SD Mode + A -> Option",
+                        "description": "Vim Mode + A -> Option",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "sd-mode",
+                                        "name": "vim-mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -283,12 +283,12 @@
                         ]
                     },
                     {
-                        "description": "SD Mode + F -> Command",
+                        "description": "Vim Mode + F -> Command",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "sd-mode",
+                                        "name": "vim-mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -303,7 +303,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_command"
+                                        "key_code": "left_command"
                                     }
                                 ],
                                 "type": "basic"
@@ -311,12 +311,12 @@
                         ]
                     },
                     {
-                        "description": "SD Mode + Space -> Shift",
+                        "description": "Vim Mode + Space -> Shift",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "sd-mode",
+                                        "name": "vim-mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -339,12 +339,12 @@
                         ]
                     },
                     {
-                        "description": "SD Mode + N -> Scroll Down",
+                        "description": "Vim Mode + N -> Scroll Down",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "sd-mode",
+                                        "name": "vim-mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -367,12 +367,12 @@
                         ]
                     },
                     {
-                        "description": "SD Mode + P -> Scroll Up",
+                        "description": "Vim Mode + P -> Scroll Up",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "sd-mode",
+                                        "name": "vim-mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -395,12 +395,12 @@
                         ]
                     },
                     {
-                        "description": "SD Mode + U -> Cmd + Z",
+                        "description": "Vim Mode + U -> Cmd + Z",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "sd-mode",
+                                        "name": "vim-mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -615,11 +615,11 @@
             "simple_modifications": [
                 {
                     "from": {
-                        "key_code": "caps_lock"
+                        "key_code": "right_command"
                     },
                     "to": [
                         {
-                            "key_code": "left_control"
+                            "key_code": "f18"
                         }
                     ]
                 }

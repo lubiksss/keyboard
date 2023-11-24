@@ -33,4 +33,4 @@ end
 
 require('keyboard.control-escape')
 
-hs.notify.new({title='Hammerspoon', informativeText='Ready to use🤘'}):send()
+hs.notify.new({title='Hammerspoon', informativeText='Ready to use'}):send()
