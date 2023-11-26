@@ -44,7 +44,7 @@
                                             },
                                             {
                                                 "set_notification_message": {
-                                                    "id": "vim_mode",
+                                                    "id": "simple_vim_mode",
                                                     "text": ""
                                                 }
                                             }
@@ -60,7 +60,7 @@
                                     },
                                     {
                                         "set_notification_message": {
-                                            "id": "vim_mode",
+                                            "id": "simple_vim_mode",
                                             "text": "NORMAL_SIMPLE"
                                         }
                                     }
@@ -278,11 +278,88 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "simple_vim_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "x",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "simple_vim_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_notification_message": {
+                                            "id": "vim_mode",
+                                            "text": "NORMAL"
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "vim_mode",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "[VIM MODE] Enter, Quit",
+                        "description": "[VIM MODE] Quit",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -321,42 +398,6 @@
                                         "set_variable": {
                                             "name": "vim_mode",
                                             "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.jetbrains.intellij",
-                                            "com.googlecode.iterm2"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "j"
-                                        },
-                                        {
-                                            "key_code": "k"
-                                        }
-                                    ]
-                                },
-                                "to": [
-                                    {
-                                        "set_notification_message": {
-                                            "id": "vim_mode",
-                                            "text": "NORMAL"
-                                        }
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "vim_mode",
-                                            "value": 1
                                         }
                                     }
                                 ],
