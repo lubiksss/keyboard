@@ -2191,12 +2191,12 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_control"
-                                    },
-                                    {
                                         "select_input_source": {
                                             "language": "^en$"
                                         }
+                                    },
+                                    {
+                                        "key_code": "left_control"
                                     }
                                 ],
                             "type": "basic"
