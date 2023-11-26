@@ -282,7 +282,7 @@
                         ]
                     },
                     {
-                        "description": "[VIM MODE] Enter, Quit",
+                        "description": "[VIM MODE] Quit",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -321,42 +321,6 @@
                                         "set_variable": {
                                             "name": "vim_mode",
                                             "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.jetbrains.intellij",
-                                            "com.googlecode.iterm2"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "j"
-                                        },
-                                        {
-                                            "key_code": "k"
-                                        }
-                                    ]
-                                },
-                                "to": [
-                                    {
-                                        "set_notification_message": {
-                                            "id": "vim_mode",
-                                            "text": "NORMAL"
-                                        }
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "vim_mode",
-                                            "value": 1
                                         }
                                     }
                                 ],
