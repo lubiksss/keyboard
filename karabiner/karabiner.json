@@ -10,7 +10,7 @@
         {
             "complex_modifications": {
                 "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 25,
+                    "basic.simultaneous_threshold_milliseconds": 30,
                     "basic.to_delayed_action_delay_milliseconds": 500,
                     "basic.to_if_alone_timeout_milliseconds": 1000,
                     "basic.to_if_held_down_threshold_milliseconds": 500,
@@ -70,7 +70,7 @@
                         ]
                     },
                     {
-                        "description": "[SIMPLE Vim Mode] + Simple Key",
+                        "description": "[SIMPLE VIM MODE] + Simple Key",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -300,7 +300,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "escape",
+                                    "key_code": "left_control",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -309,7 +309,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "escape"
+                                        "key_code": "left_control"
                                     },
                                     {
                                         "set_notification_message": {
@@ -1535,7 +1535,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "escape"
+                                    "key_code": "left_control"
                                 },
                                 "to": [
                                     {
@@ -2172,6 +2172,36 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "[Change Input Source] left control",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.jetbrains.intellij",
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_control"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control"
+                                    },
+                                    {
+                                        "select_input_source": {
+                                            "language": "^en$"
+                                        }
+                                    }
+                                ],
+                            "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
@@ -2368,6 +2398,16 @@
                     "to": [
                         {
                             "key_code": "f18"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_control"
                         }
                     ]
                 }
