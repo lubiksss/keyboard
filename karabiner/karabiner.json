@@ -325,6 +325,27 @@
                                 "type": "basic"
                             },
                             {
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "simple_vim_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "u"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "z",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
                                 "conditions": [
                                     {
                                         "name": "simple_vim_mode",
