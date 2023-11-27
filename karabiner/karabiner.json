@@ -2239,15 +2239,6 @@
                         "description": "[Change Input Source] left control",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.jetbrains.intellij",
-                                            "com.googlecode.iterm2"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "left_control"
                                 },
