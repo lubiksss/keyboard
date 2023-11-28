@@ -2,7 +2,7 @@
     "global": {
         "ask_for_confirmation_before_quitting": true,
         "check_for_updates_on_startup": true,
-        "show_in_menu_bar": true,
+        "show_in_menu_bar": false,
         "show_profile_name_in_menu_bar": false,
         "unsafe_ui": false
     },
@@ -10,7 +10,7 @@
         {
             "complex_modifications": {
                 "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 30,
+                    "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 500,
                     "basic.to_if_alone_timeout_milliseconds": 1000,
                     "basic.to_if_held_down_threshold_milliseconds": 500,
@@ -325,7 +325,6 @@
                                 "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
                                         "name": "simple_vim_mode",
@@ -343,7 +342,8 @@
                                             "left_command"
                                         ]
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
                                 "conditions": [
@@ -378,7 +378,6 @@
                                 "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
                                         "name": "simple_vim_mode",
@@ -399,10 +398,10 @@
                                     {
                                         "key_code": "return_or_enter"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
                                         "name": "simple_vim_mode",
@@ -431,7 +430,8 @@
                                     {
                                         "key_code": "up_arrow"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -865,9 +865,30 @@
                         "description": "[VIM MODE] + dd",
                         "manipulators": [
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.jetbrains.intellij",
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "name": "vim_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "d_pressed",
+                                        "type": "variable_unless",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "d"
+                                },
+                                "parameters": {
+                                    "basic.to_delayed_action_delay_milliseconds": 500
                                 },
                                 "to": [
                                     {
@@ -887,16 +908,16 @@
                                         }
                                     ]
                                 },
-                                "parameters": {
-                                    "basic.to_delayed_action_delay_milliseconds": 500
-                                },
+                                "type": "basic"
+                            },
+                            {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "com.jetbrains.intellij",
                                             "com.googlecode.iterm2"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     },
                                     {
                                         "name": "vim_mode",
@@ -905,13 +926,10 @@
                                     },
                                     {
                                         "name": "d_pressed",
-                                        "type": "variable_unless",
+                                        "type": "variable_if",
                                         "value": 1
                                     }
-                                ]
-                            },
-                            {
-                                "type": "basic",
+                                ],
                                 "from": {
                                     "key_code": "d"
                                 },
@@ -948,25 +966,7 @@
                                         ]
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_unless",
-                                        "bundle_identifiers": [
-                                            "com.jetbrains.intellij",
-                                            "com.googlecode.iterm2"
-                                        ]
-                                    },
-                                    {
-                                        "name": "vim_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "d_pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             }
                         ]
                     },
@@ -974,9 +974,30 @@
                         "description": "[VIM MODE] + cc",
                         "manipulators": [
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.jetbrains.intellij",
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "name": "vim_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "c_pressed",
+                                        "type": "variable_unless",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "c"
+                                },
+                                "parameters": {
+                                    "basic.to_delayed_action_delay_milliseconds": 500
                                 },
                                 "to": [
                                     {
@@ -996,16 +1017,16 @@
                                         }
                                     ]
                                 },
-                                "parameters": {
-                                    "basic.to_delayed_action_delay_milliseconds": 500
-                                },
+                                "type": "basic"
+                            },
+                            {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "com.jetbrains.intellij",
                                             "com.googlecode.iterm2"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     },
                                     {
                                         "name": "vim_mode",
@@ -1014,13 +1035,10 @@
                                     },
                                     {
                                         "name": "c_pressed",
-                                        "type": "variable_unless",
+                                        "type": "variable_if",
                                         "value": 1
                                     }
-                                ]
-                            },
-                            {
-                                "type": "basic",
+                                ],
                                 "from": {
                                     "key_code": "c"
                                 },
@@ -1069,25 +1087,7 @@
                                         }
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_unless",
-                                        "bundle_identifiers": [
-                                            "com.jetbrains.intellij",
-                                            "com.googlecode.iterm2"
-                                        ]
-                                    },
-                                    {
-                                        "name": "vim_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "c_pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             }
                         ]
                     },
@@ -1095,7 +1095,20 @@
                         "description": "[VIM MODE] + x,p,u,control+r",
                         "manipulators": [
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.jetbrains.intellij",
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "name": "vim_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "x"
                                 },
@@ -1104,23 +1117,23 @@
                                         "key_code": "delete_forward"
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "com.jetbrains.intellij",
                                             "com.googlecode.iterm2"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     },
                                     {
                                         "name": "vim_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
-                                ]
-                            },
-                            {
-                                "type": "basic",
+                                ],
                                 "from": {
                                     "key_code": "p"
                                 },
@@ -1132,23 +1145,23 @@
                                         ]
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "com.jetbrains.intellij",
                                             "com.googlecode.iterm2"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     },
                                     {
                                         "name": "vim_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
-                                ]
-                            },
-                            {
-                                "type": "basic",
+                                ],
                                 "from": {
                                     "key_code": "u"
                                 },
@@ -1160,23 +1173,23 @@
                                         ]
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "com.jetbrains.intellij",
                                             "com.googlecode.iterm2"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     },
                                     {
                                         "name": "vim_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
-                                ]
-                            },
-                            {
-                                "type": "basic",
+                                ],
                                 "from": {
                                     "key_code": "r",
                                     "modifiers": {
@@ -1194,20 +1207,7 @@
                                         ]
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_unless",
-                                        "bundle_identifiers": [
-                                            "com.jetbrains.intellij",
-                                            "com.googlecode.iterm2"
-                                        ]
-                                    },
-                                    {
-                                        "name": "vim_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             }
                         ]
                     },
@@ -1215,7 +1215,20 @@
                         "description": "[VIM MODE] + i,I,a,A,o,O",
                         "manipulators": [
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.jetbrains.intellij",
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "name": "vim_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "i"
                                 },
@@ -1233,23 +1246,23 @@
                                         }
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "com.jetbrains.intellij",
                                             "com.googlecode.iterm2"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     },
                                     {
                                         "name": "vim_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
-                                ]
-                            },
-                            {
-                                "type": "basic",
+                                ],
                                 "from": {
                                     "key_code": "i",
                                     "modifiers": {
@@ -1278,23 +1291,23 @@
                                         }
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "com.jetbrains.intellij",
                                             "com.googlecode.iterm2"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     },
                                     {
                                         "name": "vim_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
-                                ]
-                            },
-                            {
-                                "type": "basic",
+                                ],
                                 "from": {
                                     "key_code": "a"
                                 },
@@ -1312,23 +1325,23 @@
                                         }
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "com.jetbrains.intellij",
                                             "com.googlecode.iterm2"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     },
                                     {
                                         "name": "vim_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
-                                ]
-                            },
-                            {
-                                "type": "basic",
+                                ],
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": {
@@ -1357,23 +1370,23 @@
                                         }
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "com.jetbrains.intellij",
                                             "com.googlecode.iterm2"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     },
                                     {
                                         "name": "vim_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
-                                ]
-                            },
-                            {
-                                "type": "basic",
+                                ],
                                 "from": {
                                     "key_code": "o"
                                 },
@@ -1400,23 +1413,23 @@
                                         }
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "com.jetbrains.intellij",
                                             "com.googlecode.iterm2"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     },
                                     {
                                         "name": "vim_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
-                                ]
-                            },
-                            {
-                                "type": "basic",
+                                ],
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": {
@@ -1451,20 +1464,7 @@
                                         }
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_unless",
-                                        "bundle_identifiers": [
-                                            "com.jetbrains.intellij",
-                                            "com.googlecode.iterm2"
-                                        ]
-                                    },
-                                    {
-                                        "name": "vim_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             }
                         ]
                     },
@@ -1680,7 +1680,6 @@
                                             "text": "NORMAL"
                                         }
                                     }
-
                                 ],
                                 "type": "basic"
                             },
@@ -2132,7 +2131,6 @@
                                             "text": "NORMAL"
                                         }
                                     }
-
                                 ],
                                 "type": "basic"
                             },
@@ -2308,7 +2306,7 @@
                                         "key_code": "left_control"
                                     }
                                 ],
-                            "type": "basic"
+                                "type": "basic"
                             }
                         ]
                     }
@@ -2502,21 +2500,21 @@
             "simple_modifications": [
                 {
                     "from": {
-                        "key_code": "right_command"
-                    },
-                    "to": [
-                        {
-                            "key_code": "f18"
-                        }
-                    ]
-                },
-                {
-                    "from": {
                         "key_code": "caps_lock"
                     },
                     "to": [
                         {
                             "key_code": "left_control"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "right_command"
+                    },
+                    "to": [
+                        {
+                            "key_code": "f18"
                         }
                     ]
                 }
