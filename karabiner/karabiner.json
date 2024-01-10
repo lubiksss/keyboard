@@ -216,108 +216,22 @@
                         "description": "[VIM MODE] Enter, Quit",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.jetbrains.intellij",
-                                            "com.googlecode.iterm2"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    },
-                                    {
-                                        "name": "vim_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    },
-                                    {
-                                        "name": "visual_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    },
-                                    {
-                                        "name": "j_pressed",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    }
-                                ],
                                 "type": "basic",
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "j_pressed",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_delayed_action": {
-                                    "to_if_invoked": [
-                                        {
-                                            "set_variable": {
-                                                "name": "j_pressed",
-                                                "value": 0
-                                            }
-                                        },
-                                        {
-                                            "key_code": "j"
-                                        }
-                                    ]
-                                },
                                 "parameters": {
-                                    "basic.to_delayed_action_delay_milliseconds": 50
-                                }
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.jetbrains.intellij",
-                                            "com.googlecode.iterm2"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    },
-                                    {
-                                        "name": "vim_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    },
-                                    {
-                                        "name": "visual_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    },
-                                    {
-                                        "name": "j_pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
+                                    "basic.simultaneous_threshold_milliseconds": 50
+                                },
                                 "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "optional": ["any"]
+                                    "simultaneous": [
+                                        {"key_code": "j"},
+                                        {"key_code": "k"}
+                                    ],
+                                    "simultaneous_options": {
+                                        "key_down_order": "strict",
+                                        "key_up_order": "strict"
                                     }
                                 },
                                 "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "j_pressed",
-                                            "value": 0
-                                        }
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "vim_mode",
-                                            "value": 1
-                                        }
-                                    },
+                                    {"set_variable": {"name": "vim_mode", "value": 1}},
                                     {
                                         "set_notification_message": {
                                             "id": "vim_mode",
@@ -325,7 +239,25 @@
                                         }
                                     }
                                 ],
-                                "type": "basic"
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.jetbrains.intellij",
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "name": "vim_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "visual_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ]
                             },
                             {
                                 "conditions": [
