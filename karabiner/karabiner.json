@@ -218,7 +218,7 @@
                             {
                                 "type": "basic",
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 50
+                                    "basic.simultaneous_threshold_milliseconds": 60
                                 },
                                 "from": {
                                     "simultaneous": [
