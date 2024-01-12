@@ -213,32 +213,9 @@
                         ]
                     },
                     {
-                        "description": "[VIM MODE] Enter, Quit",
+                        "description": "[VIM MODE] Enter",
                         "manipulators": [
                             {
-                                "type": "basic",
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 60
-                                },
-                                "from": {
-                                    "simultaneous": [
-                                        {"key_code": "j"},
-                                        {"key_code": "k"}
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict"
-                                    }
-                                },
-                                "to": [
-                                    {"set_variable": {"name": "vim_mode", "value": 1}},
-                                    {
-                                        "set_notification_message": {
-                                            "id": "vim_mode",
-                                            "text": "NORMAL"
-                                        }
-                                    }
-                                ],
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
@@ -257,46 +234,46 @@
                                         "type": "variable_if",
                                         "value": 0
                                     }
-                                ]
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.jetbrains.intellij",
-                                            "com.googlecode.iterm2"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    },
-                                    {
-                                        "name": "vim_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
                                 ],
                                 "from": {
-                                    "key_code": "left_control",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
+                                    "simultaneous": [
+                                        {
+                                            "key_code": "j"
+                                        },
+                                        {
+                                            "key_code": "k"
+                                        }
+                                    ],
+                                    "simultaneous_options": {
+                                        "key_down_order": "strict",
+                                        "key_up_order": "strict"
                                     }
+                                },
+                                "parameters": {
+                                    "basic.simultaneous_threshold_milliseconds": 60
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_control"
+                                        "set_variable": {
+                                            "name": "vim_mode",
+                                            "value": 1
+                                        }
                                     },
                                     {
                                         "set_notification_message": {
                                             "id": "vim_mode",
-                                            "text": ""
+                                            "text": "NORMAL"
                                         }
                                     },
                                     {
-                                        "set_variable": {
-                                            "name": "vim_mode",
-                                            "value": 0
-                                        }
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -327,6 +304,16 @@
                                 "to": [
                                     {
                                         "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -351,7 +338,17 @@
                                 },
                                 "to": [
                                     {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
                                         "key_code": "down_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -376,7 +373,17 @@
                                 },
                                 "to": [
                                     {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
                                         "key_code": "up_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -402,6 +409,13 @@
                                 "to": [
                                     {
                                         "key_code": "right_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -430,6 +444,16 @@
                                         "modifiers": [
                                             "left_alt"
                                         ]
+                                    },
+                                    {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -463,7 +487,11 @@
                                         "key_code": "right_arrow"
                                     },
                                     {
-                                        "key_code": "right_arrow"
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -492,6 +520,13 @@
                                         "modifiers": [
                                             "left_alt"
                                         ]
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -525,6 +560,13 @@
                                         "modifiers": [
                                             "left_command"
                                         ]
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -558,6 +600,16 @@
                                         "modifiers": [
                                             "left_command"
                                         ]
+                                    },
+                                    {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -633,16 +685,26 @@
                                 },
                                 "to": [
                                     {
+                                        "set_variable": {
+                                            "name": "g_pressed",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
                                         "key_code": "up_arrow",
                                         "modifiers": [
                                             "left_command"
                                         ]
                                     },
                                     {
-                                        "set_variable": {
-                                            "name": "g_pressed",
-                                            "value": 0
-                                        }
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -676,6 +738,19 @@
                                         "modifiers": [
                                             "left_command"
                                         ]
+                                    },
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -768,12 +843,6 @@
                                         ]
                                     },
                                     {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    },
-                                    {
                                         "key_code": "right_arrow",
                                         "modifiers": [
                                             "left_command",
@@ -781,10 +850,23 @@
                                         ]
                                     },
                                     {
-                                        "key_code": "x",
+                                        "key_code": "c",
                                         "modifiers": [
                                             "left_command"
                                         ]
+                                    },
+                                    {
+                                        "key_code": "k",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -866,15 +948,21 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "c_pressed",
+                                            "name": "vim_mode",
                                             "value": 0
                                         }
                                     },
                                     {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
+                                        "set_notification_message": {
+                                            "id": "vim_mode",
+                                            "text": ""
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "c_pressed",
+                                            "value": 0
+                                        }
                                     },
                                     {
                                         "key_code": "left_arrow",
@@ -890,22 +978,17 @@
                                         ]
                                     },
                                     {
-                                        "key_code": "x",
+                                        "key_code": "c",
                                         "modifiers": [
                                             "left_command"
                                         ]
                                     },
                                     {
-                                        "set_variable": {
-                                            "name": "vim_mode",
-                                            "value": 0
-                                        }
-                                    },
-                                    {
-                                        "set_notification_message": {
-                                            "id": "vim_mode",
-                                            "text": ""
-                                        }
+                                        "key_code": "k",
+                                        "modifiers": [
+                                            "left_control"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -913,7 +996,7 @@
                         ]
                     },
                     {
-                        "description": "[VIM MODE] + x,p,u,control+r",
+                        "description": "[VIM MODE] + x,p,P,u,ctrl+r",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -935,7 +1018,17 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_forward"
+                                        "key_code": "x",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -960,10 +1053,69 @@
                                 },
                                 "to": [
                                     {
+                                        "key_code": "right_arrow"
+                                    },
+                                    {
                                         "key_code": "v",
                                         "modifiers": [
                                             "left_command"
                                         ]
+                                    },
+                                    {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.jetbrains.intellij",
+                                            "com.googlecode.iterm2"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "name": "vim_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "v",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -992,6 +1144,16 @@
                                         "modifiers": [
                                             "left_command"
                                         ]
+                                    },
+                                    {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1026,6 +1188,16 @@
                                             "left_command",
                                             "left_shift"
                                         ]
+                                    },
+                                    {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1065,6 +1237,10 @@
                                             "id": "vim_mode",
                                             "text": ""
                                         }
+                                    },
+                                    {
+                                        "key_code": "left_arrow",
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1094,12 +1270,6 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    },
-                                    {
                                         "set_variable": {
                                             "name": "vim_mode",
                                             "value": 0
@@ -1110,6 +1280,12 @@
                                             "id": "vim_mode",
                                             "text": ""
                                         }
+                                    },
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1144,6 +1320,10 @@
                                             "id": "vim_mode",
                                             "text": ""
                                         }
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1173,12 +1353,6 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    },
-                                    {
                                         "set_variable": {
                                             "name": "vim_mode",
                                             "value": 0
@@ -1189,6 +1363,12 @@
                                             "id": "vim_mode",
                                             "text": ""
                                         }
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1213,15 +1393,6 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "return_or_enter"
-                                    },
-                                    {
                                         "set_variable": {
                                             "name": "vim_mode",
                                             "value": 0
@@ -1232,6 +1403,15 @@
                                             "id": "vim_mode",
                                             "text": ""
                                         }
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "return_or_enter"
                                     }
                                 ],
                                 "type": "basic"
@@ -1261,18 +1441,6 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "return_or_enter"
-                                    },
-                                    {
-                                        "key_code": "up_arrow"
-                                    },
-                                    {
                                         "set_variable": {
                                             "name": "vim_mode",
                                             "value": 0
@@ -1283,6 +1451,18 @@
                                             "id": "vim_mode",
                                             "text": ""
                                         }
+                                    },
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "return_or_enter"
+                                    },
+                                    {
+                                        "key_code": "up_arrow"
                                     }
                                 ],
                                 "type": "basic"
@@ -1385,6 +1565,16 @@
                                             "id": "vim_mode",
                                             "text": "NORMAL"
                                         }
+                                    },
+                                    {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1419,19 +1609,6 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "shift",
-                                            "left_command"
-                                        ]
-                                    },
-                                    {
                                         "set_variable": {
                                             "name": "vim_mode",
                                             "value": 0
@@ -1454,6 +1631,20 @@
                                             "id": "vim_mode",
                                             "text": ""
                                         }
+                                    },
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "shift",
+                                            "left_command"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1500,6 +1691,16 @@
                                             "id": "vim_mode",
                                             "text": "NORMAL"
                                         }
+                                    },
+                                    {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1640,7 +1841,8 @@
                                         "modifiers": [
                                             "left_shift",
                                             "left_alt"
-                                        ]
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1681,7 +1883,8 @@
                                         "key_code": "right_arrow",
                                         "modifiers": [
                                             "left_shift"
-                                        ]
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1710,7 +1913,8 @@
                                         "modifiers": [
                                             "left_shift",
                                             "left_alt"
-                                        ]
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1740,11 +1944,15 @@
                                 },
                                 "to": [
                                     {
+                                        "key_code": "right_arrow"
+                                    },
+                                    {
                                         "key_code": "left_arrow",
                                         "modifiers": [
                                             "left_shift",
                                             "left_command"
-                                        ]
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1778,7 +1986,8 @@
                                         "modifiers": [
                                             "left_shift",
                                             "left_command"
-                                        ]
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1854,17 +2063,18 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "left_shift",
-                                            "left_command"
-                                        ]
-                                    },
-                                    {
                                         "set_variable": {
                                             "name": "g_pressed",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "left_shift",
+                                            "left_command"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1898,7 +2108,8 @@
                                         "modifiers": [
                                             "left_shift",
                                             "left_command"
-                                        ]
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1923,12 +2134,6 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "x",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    },
-                                    {
                                         "set_variable": {
                                             "name": "visual_mode",
                                             "value": 0
@@ -1951,6 +2156,19 @@
                                             "id": "vim_mode",
                                             "text": "NORMAL"
                                         }
+                                    },
+                                    {
+                                        "key_code": "x",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -1975,12 +2193,6 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "c",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    },
-                                    {
                                         "set_variable": {
                                             "name": "visual_mode",
                                             "value": 0
@@ -2003,6 +2215,22 @@
                                             "id": "vim_mode",
                                             "text": "NORMAL"
                                         }
+                                    },
+                                    {
+                                        "key_code": "c",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -2027,12 +2255,6 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "x",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    },
-                                    {
                                         "set_variable": {
                                             "name": "visual_mode",
                                             "value": 0
@@ -2055,6 +2277,13 @@
                                             "id": "visual_mode",
                                             "text": ""
                                         }
+                                    },
+                                    {
+                                        "key_code": "x",
+                                        "modifiers": [
+                                            "left_command"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -2079,9 +2308,6 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_or_backspace"
-                                    },
-                                    {
                                         "set_variable": {
                                             "name": "visual_mode",
                                             "value": 0
@@ -2104,6 +2330,19 @@
                                             "id": "vim_mode",
                                             "text": "NORMAL"
                                         }
+                                    },
+                                    {
+                                        "key_code": "x",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
@@ -2137,7 +2376,9 @@
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
+                        "is_game_pad": false,
                         "is_keyboard": true,
                         "is_pointing_device": false,
                         "product_id": 835,
@@ -2145,13 +2386,21 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
+                        "is_game_pad": false,
                         "is_keyboard": false,
                         "is_pointing_device": true,
                         "product_id": 835,
@@ -2159,13 +2408,21 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
+                        "is_game_pad": false,
                         "is_keyboard": true,
                         "is_pointing_device": false,
                         "product_id": 33,
@@ -2173,13 +2430,21 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
+                        "is_game_pad": false,
                         "is_keyboard": true,
                         "is_pointing_device": true,
                         "product_id": 45077,
@@ -2187,6 +2452,12 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 }
