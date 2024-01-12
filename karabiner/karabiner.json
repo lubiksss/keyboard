@@ -516,6 +516,9 @@
                                 },
                                 "to": [
                                     {
+                                        "key_code": "left_arrow"
+                                    },
+                                    {
                                         "key_code": "left_arrow",
                                         "modifiers": [
                                             "left_alt"
