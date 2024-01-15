@@ -859,10 +859,7 @@
                                         ]
                                     },
                                     {
-                                        "key_code": "k",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
+                                        "key_code": "delete_or_backspace"
                                     },
                                     {
                                         "key_code": "right_arrow",
@@ -987,10 +984,7 @@
                                         ]
                                     },
                                     {
-                                        "key_code": "k",
-                                        "modifiers": [
-                                            "left_control"
-                                        ],
+                                        "key_code": "delete_or_backspace",
                                         "repeat": false
                                     }
                                 ],
