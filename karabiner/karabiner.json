@@ -209,6 +209,35 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "simple_vim_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "return_or_enter",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                      "key_code": "l",
+                                      "modifiers": [
+                                        "left_control",
+                                        "left_command",
+                                        "left_option"
+                                      ],
+                                      "repeat": false
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
