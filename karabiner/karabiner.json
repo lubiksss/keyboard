@@ -44,7 +44,7 @@
                                     {
                                         "set_notification_message": {
                                             "id": "simple_vim_mode",
-                                            "text": "NORMAL_SIMPLE"
+                                            "text": "VIM_MODE"
                                         }
                                     }
                                 ],
