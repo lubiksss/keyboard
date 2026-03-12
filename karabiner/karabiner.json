@@ -193,7 +193,7 @@
                         ]
                     },
                     {
-                        "description": "[WINDOW MODE] Enter, Quit",
+                        "description": "[CTRL+OPT MODE] Enter, Quit",
                         "manipulators": [
                             {
                                 "from": {
@@ -209,13 +209,13 @@
                                         "to_after_key_up": [
                                             {
                                                 "set_variable": {
-                                                    "name": "window_mode",
+                                                    "name": "ctrl_opt_mode",
                                                     "value": 0
                                                 }
                                             },
                                             {
                                                 "set_notification_message": {
-                                                    "id": "window_mode",
+                                                    "id": "ctrl_opt_mode",
                                                     "text": ""
                                                 }
                                             }
@@ -225,14 +225,14 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "window_mode",
+                                            "name": "ctrl_opt_mode",
                                             "value": 1
                                         }
                                     },
                                     {
                                         "set_notification_message": {
-                                            "id": "window_mode",
-                                            "text": "WINDOW_MODE"
+                                            "id": "ctrl_opt_mode",
+                                            "text": "CTRL+OPT_MODE"
                                         }
                                     }
                                 ],
@@ -241,12 +241,12 @@
                         ]
                     },
                     {
-                        "description": "[WINDOW MODE] + Simple Key",
+                        "description": "[CTRL+OPT MODE] + Simple Key",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "window_mode",
+                                        "name": "ctrl_opt_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -257,8 +257,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["left_control", "left_command", "left_option"],
+                                        "key_code": "p",
+                                        "modifiers": ["left_control", "left_option"],
                                         "repeat": false
                                     }
                                 ],
@@ -267,7 +267,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "window_mode",
+                                        "name": "ctrl_opt_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -278,8 +278,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["left_control", "left_command", "left_option"],
+                                        "key_code": "n",
+                                        "modifiers": ["left_control", "left_option"],
                                         "repeat": false
                                     }
                                 ],
@@ -288,7 +288,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "window_mode",
+                                        "name": "ctrl_opt_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -309,7 +309,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "window_mode",
+                                        "name": "ctrl_opt_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -330,7 +330,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "window_mode",
+                                        "name": "ctrl_opt_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -351,7 +351,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "window_mode",
+                                        "name": "ctrl_opt_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -372,7 +372,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "window_mode",
+                                        "name": "ctrl_opt_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
