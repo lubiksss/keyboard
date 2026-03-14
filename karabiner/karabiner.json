@@ -530,10 +530,10 @@
                         ]
                     },
                     {
-                        "description": "[Change Input Source] left control",
+                        "description": "[Change Input Source] caps_lock → english + left_control",
                         "manipulators": [
                             {
-                                "from": { "key_code": "left_control" },
+                                "from": { "key_code": "caps_lock" },
                                 "to": [
                                     { "select_input_source": { "language": "^en$" } },
                                     { "key_code": "left_control" }
@@ -547,10 +547,6 @@
             "name": "lubiksss",
             "selected": true,
             "simple_modifications": [
-                {
-                    "from": { "key_code": "caps_lock" },
-                    "to": [{ "key_code": "left_control" }]
-                },
                 {
                     "from": { "key_code": "right_command" },
                     "to": [{ "key_code": "f18" }]
