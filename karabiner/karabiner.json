@@ -533,7 +533,10 @@
                         "description": "[Change Input Source] caps_lock → english + left_control",
                         "manipulators": [
                             {
-                                "from": { "key_code": "caps_lock" },
+                                "from": {
+                                "key_code": "caps_lock",
+                                "modifiers": { "optional": ["any"] }
+                            },
                                 "to": [
                                     { "select_input_source": { "language": "^en$" } },
                                     { "key_code": "left_control" }
