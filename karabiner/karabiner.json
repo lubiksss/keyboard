@@ -530,6 +530,44 @@
                         ]
                     },
                     {
+                        "description": "[Change Input Source] modifier → english + modifier",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    { "select_input_source": { "language": "^en$" } },
+                                    { "key_code": "left_command" }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "left_option",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    { "select_input_source": { "language": "^en$" } },
+                                    { "key_code": "left_option" }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    { "select_input_source": { "language": "^en$" } },
+                                    { "key_code": "left_control" }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "[Change Input Source] caps_lock → english + left_control",
                         "manipulators": [
                             {
